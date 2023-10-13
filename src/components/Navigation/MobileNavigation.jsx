@@ -3,6 +3,8 @@ import { NavLinks } from "./NavLinks";
 import { FaUser, FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { useState } from "react";
+import { Login } from "../../pages/Login/Login";
+import { Link } from "react-router-dom";
 
 export const MobileNavigation = () => {
 
@@ -15,11 +17,11 @@ export const MobileNavigation = () => {
                 <div>
                     <h1 className={style.mobileH1}>INGN</h1>
                     <figure>
-                        <FaUser />
+                        <Link to="/Login"><FaUser/></Link>
                         <FaBars onClick={() => setOpen(!open) }/>
                     </figure>
                 </div>
-                { open && <><NavLinks /> <GrClose/></>}
+                { open && <><NavLinks /></>}
             </nav>
         </>
     )

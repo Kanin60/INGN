@@ -1,6 +1,9 @@
+//LOGIN VIRKER MEN MAN KAN IKKE REDIGERE NOGET
+
 import { useAccessKey } from "../../utils/UserContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import style from "./Login.module.scss"
 
 export const Login = () => {
 
@@ -22,11 +25,13 @@ export const Login = () => {
 
     //retunere form med login-siden
     return(
-        <section style={{width: "1000px", margin: "auto"}}>
-            <p>LOGIN</p>
+        <section className={style.login}>
+            <h2>LOGIN</h2>
             <form onSubmit={handelSubmit}>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <label htmlFor="name">Brugernavn:</label>
+                <input type="text" id="name" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
             </form>
         </section>

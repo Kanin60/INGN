@@ -1,0 +1,49 @@
+@import url(../../globalStyle.scss);
+
+.login{
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding: 10rem;
+    h2{
+        font-family: var(--paragraph);
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+    }
+    form{
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        label{
+            font-family: var(--paragraph);margin-bottom: 5px;
+        }
+        input{
+            margin-bottom: 2rem;
+            padding: 10px;
+            border: 3px solid var(--CallToAction);
+        }
+        button{
+            border: 1px solid var(--CallToAction);
+            padding: 10px;
+            background-color: transparent;
+            width: 150px;
+        }
+        button:hover{
+            background-color: var(--CallToAction);
+            color: var(--white);
+        }
+       
+    }
+}
+@media only screen and (max-width: 640px) {
+    .login{
+        max-width: 100vw;
+        padding: 0;
+        form{
+            input{
+                width: 100vw;
+            }
+        }
+    }
+}
