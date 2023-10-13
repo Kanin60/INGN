@@ -9,12 +9,15 @@ import { useAccessKey } from "../../utils/UserContext";
 export const Alle = () => {
     const [allArticles, setAllArticles] = useState([]);
     const { accessKey } = useAccessKey();
+
+    //henter data fra hygraph med query til alle artikler
     const alleArtiklerFetchet = useQuery({
         queryKey: ['hentAlleArtikler'],
         queryFn: async () => request(`https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clnbdeq138a3801uk3zh7fmbl/master`,
         alleArtikler)
     })
-    
+
+    //Sortere data enfter dato og sætter staten allArticles med sorteret artikler
     useEffect(() => {
         if (alleArtiklerFetchet.isSuccess) {
             const dates = [...alleArtiklerFetchet.data.andebyArticles]
@@ -24,10 +27,11 @@ export const Alle = () => {
         }
     },[alleArtiklerFetchet.isSuccess])
 
-    console.log("allArtikcles", allArticles);
+    // console.log("allArtikcles", allArticles);
 
     if (alleArtiklerFetchet.isLoading) return (<p>Loading...</p>)
 
+    //retunere artikel/card med i conditional rendering som vises når man logger ind
     return(
         <section className={style.sectionAlle}>
             {allArticles?.map((item, index) => {

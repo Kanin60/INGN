@@ -11,12 +11,14 @@ export const Kategorier = () => {
     const { kategori } =useParams()
     // console.log("kategorier: ", kategori);
 
+    //henter data fra hygraph baseret på kategori
     const alleKategorier = useQuery({
         queryKey: ['hentKategoriArtikel', kategori],
         queryFn: async () => request(`https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clnbdeq138a3801uk3zh7fmbl/master`, 
         kategorier, { kategori : kategori })
     })
 
+    //Sortere data enfter dato og sætter staten artikler med sorteret artikler - ændres når kategorien ændres
     useEffect(() => {
         if (alleKategorier.isSuccess) {
             const dates = [...alleKategorier.data.andebyArticles]
@@ -29,7 +31,7 @@ export const Kategorier = () => {
 
     if (alleKategorier.error) return <p>Der skete en fejl: {error.message}</p>
 
-
+    // retunere artikler under en bestemt kategori
     return(
         <section className={style.kategori}>
             {artikler?.map((item, index) => {

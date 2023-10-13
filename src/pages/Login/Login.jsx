@@ -8,7 +8,8 @@ export const Login = () => {
     const [password, setPassword] = useState("");
     const { setAccessKey } = useAccessKey();
     const navigate = useNavigate();
-
+    
+    //Undersøger om brugernavn og password er korrekt og sender hhv en til forsiden eller viser en alert med error
     const handelSubmit = (e) => {
         e.preventDefault();
         if(username === "admin" && password === "1234") {
@@ -19,6 +20,7 @@ export const Login = () => {
         }
     };
 
+    //retunere form med login-siden
     return(
         <section style={{width: "1000px", margin: "auto"}}>
             <p>LOGIN</p>
