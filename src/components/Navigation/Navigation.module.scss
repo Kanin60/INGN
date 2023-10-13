@@ -1,0 +1,99 @@
+@import url(../../globalStyle.scss);
+
+.navigation{
+    box-shadow: 1px 2px 9px -3px rgb(183, 182, 182);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 60% 1fr;
+    align-items: center;
+    justify-items: center;
+    h1{
+        font-family: var(--headline);
+        color: var(--CallToAction);
+        font-size: 40px;
+        margin-left: 10px;
+    }
+    ul{
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        a{
+            margin-right: 2em;
+            padding-left: 30px;
+            border-left: 1px solid var(--black);
+            text-decoration: none;
+            font-family: var(--paragraph);
+            color: var(--black);
+            letter-spacing: 3px;
+        }
+        a:nth-child(7){
+            border-right: 1px solid var(--black);
+            padding-right: 30px;
+        }
+        a:hover{
+            color: var(--CallToAction);
+        }
+    }
+    svg{
+        margin-left: 30px;
+        color: var(--CallToAction);
+        font-size: 30px;
+    }
+    svg:nth-child(2){
+        display: none;
+    }
+    svg:hover{
+        color: var(--black);
+    }
+}
+.mobileNavigation{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    div{
+        display: flex;
+        justify-content: space-between;
+        .mobileH1{
+            display:inline;
+            font-family: 'Righteous';
+            color: var(--CallToAction);
+            font-size: 40px;
+        }
+        figure{
+            svg{
+                font-size: 30px;
+                color: var(--CallToAction);
+                margin-right:20px;
+                margin-top: 5px;
+            }
+        }
+    }
+    a{
+        text-decoration: none;
+        font-family: var(--paragraph);
+        color: var(--black);
+        letter-spacing: 3px;
+    }
+}
+
+
+@media only screen and (max-width: 640px) { 
+    .navigation{
+        display: none;
+    }   
+    ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+}
+@media only screen and (min-width: 641px) {
+    .mobileNavigation{
+        display: none;
+    }   
+}

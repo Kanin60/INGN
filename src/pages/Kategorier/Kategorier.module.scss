@@ -1,0 +1,40 @@
+@import url(../../globalStyle.scss);
+
+.kategori{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    article{
+        background-color: var(--white);
+    }
+    h2{
+        font-family: var(--paragraph);
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 1rem;
+    }
+    p{
+        font-family: var(--paragraph);
+        margin: 1rem;
+    }  
+    p:nth-child(3){
+        color: var(--CallToAction);
+    }
+    a{
+        color: var(--black);
+        margin: 1rem;
+        text-decoration: none;
+        font-family: var(--paragraph);
+    }
+    a:hover{
+        color: var(--CallToAction);
+    }
+    img{
+        margin-top: 1rem;
+        width: 580px; 
+        height: 430px; 
+        object-fit: cover
+    }
+}

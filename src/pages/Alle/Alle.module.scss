@@ -1,0 +1,60 @@
+@import url(../../globalStyle.scss);
+
+.sectionAlle{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: 
+    "a1 a1 a1 a1"
+    "a1 a1 a1 a1"
+    "a2 a2 a3 a3"
+    "a2 a2 a4 a4"
+    "a5 a5 a4 a4"
+    "a6 a6 a6 a6"
+    ;
+    article{
+        background-color: var(--white);
+        
+        h2{
+            font-family: var(--paragraph);
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 1rem;
+        }
+        p{
+            font-family: var(--paragraph);
+            margin: 1rem;
+        }
+        p:nth-child(3){
+            color: var(--CallToAction);
+        }
+        a{
+            color: var(--black);
+            margin: 1rem;
+            text-decoration: none;
+            font-family: var(--paragraph);
+        }
+        a:hover{
+            color: var(--CallToAction);
+        }
+        img{
+            margin-top: 1rem;
+            width: 100%;
+        }
+    }
+  
+}  
+@media only screen and (max-width: 640px) {
+    .sectionAlle{
+        display: grid;
+        grid-template-areas: 
+        "a1"
+        "a2"
+        "a3"
+        "a4"
+        "a5"
+        "a6"
+        ;
+    }
+}

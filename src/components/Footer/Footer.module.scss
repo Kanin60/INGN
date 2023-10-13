@@ -1,0 +1,44 @@
+@import url('../../globalStyle.scss');
+.footer{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: var(--white);
+    div{ 
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  
+        max-width: 1000px; 
+        margin: auto;
+        ul{
+            list-style: none;
+            h4{
+                font-family: var(--paragraph);
+                font-weight: 500;
+                text-align: left;
+                margin-bottom: 1rem;
+            }
+            li{
+                font-family: var(--paragraph);
+                font-weight: 500;
+                text-align: left;
+                line-height: 20px;
+                a{
+                    text-decoration: none;
+                    color: var(--black);
+                }
+                a:hover{
+                    color: var(--CallToAction);
+                }
+            }
+        }
+    }
+   
+}
+@media only screen and (max-width: 640px) {
+    .footer div{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
