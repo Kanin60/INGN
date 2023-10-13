@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { alleArtikler } from "../../queries/alleArtikler";
 import style from "./Alle.module.scss"
+import { useAccessKey } from "../../utils/UserContext";
 
 export const Alle = () => {
-    const [allArticles, setAllArticles] = useState([])
-
+    const [allArticles, setAllArticles] = useState([]);
+    const { accessKey } = useAccessKey();
     const alleArtiklerFetchet = useQuery({
         queryKey: ['hentAlleArtikler'],
         queryFn: async () => request(`https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clnbdeq138a3801uk3zh7fmbl/master`,
@@ -36,6 +37,9 @@ export const Alle = () => {
                         <p>{item.description}</p>
                         <p>D.{item.dato} - af {item.forfatter}</p>
                         <Link to={`/details/${item.id}`}>Læs mere</Link>
+                        {accessKey ? (
+                            <p>Rediger</p>
+                        ): null } 
                         <img src={item.smallImage.url} alt={item.title} />
                     </article>
                 )
